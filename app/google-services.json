@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1086472823245",
+    "firebase_url": "https://mymapappcdingwithmitch.firebaseio.com",
+    "project_id": "mymapappcdingwithmitch",
+    "storage_bucket": "mymapappcdingwithmitch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086472823245:android:3711b3135a1f2bc0ae2484",
+        "android_client_info": {
+          "package_name": "com.example.NoteAppcleanArach"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086472823245-7ig3gsclqeghp167rd9h7ucnrhq0io50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfYCBYwmgaYOX5L2Tx72kQz2bUwjm33jU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086472823245-7ig3gsclqeghp167rd9h7ucnrhq0io50.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
