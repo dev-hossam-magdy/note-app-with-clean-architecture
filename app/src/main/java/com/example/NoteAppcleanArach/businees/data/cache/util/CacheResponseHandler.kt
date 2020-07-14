@@ -1,5 +1,6 @@
 package com.example.NoteAppcleanArach.businees.data.cache.util
 
+import android.util.Log
 import com.example.NoteAppcleanArach.businees.doman.state.*
 
 
@@ -7,10 +8,19 @@ abstract class CacheResponseHandler<ViewState, Data>(
     private val response: CacheResult<Data?>,
     private val stateEvent: StateEvent?
 ) {
+    private val TAG = "CacheResponseHandler"
+
     suspend fun getResult(): DataState<ViewState>? =
         when (response) {
 
-            is CacheResult.Error -> createDataStateError(stateEvent, response.errorMessages ?: "")
+            is CacheResult.Error -> {
+
+                Log.e(TAG,"Error: ${response.errorMessages}")
+
+                createDataStateError(stateEvent, response.errorMessages ?: "")
+
+            }
+
 
             is CacheResult.Success ->
                 if (response.value == null)
