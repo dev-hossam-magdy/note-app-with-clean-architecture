@@ -41,5 +41,5 @@ interface NoteDaoService {
         page: Int
     ): List<Note>
     suspend fun getNoteById(primaryKey: String): Note?
-
+    suspend fun getAllNotes(): List<Note>
 }

@@ -10,7 +10,6 @@ import com.example.NoteAppcleanArach.framework.presentaion.notelist.state.NoteLi
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import retrofit2.http.Query
 
 class SearchNote(
     private val noteCacheDataSource: NoteCacheDataSource

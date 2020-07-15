@@ -30,6 +30,8 @@ constructor(
         TODO(" check the filter and order before query ")
     }
 
+    override suspend fun getAllNotes(): List<Note> = noteDaoService.getAllNotes()
+
     override suspend fun getNoteById(primaryKey: String): Note? = noteDaoService.getNoteById(primaryKey)
 }
 

@@ -18,7 +18,7 @@ interface NoteCacheDataSource {
         filterOrOrder: String,
         page: Int
     ): List<Note>
-
+    suspend fun getAllNotes(): List<Note>
     suspend fun getNoteById(primaryKey: String): Note?
 
 

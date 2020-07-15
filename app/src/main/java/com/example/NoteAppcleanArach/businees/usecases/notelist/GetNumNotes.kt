@@ -12,12 +12,15 @@ import kotlinx.coroutines.flow.flow
 class GetNumNotes(
     private val noteCacheDataSource: NoteCacheDataSource
 ) {
+    private val TAG = "GetNumNotes"
+
 
     fun getTotalNumOfNotes(stateEvent: StateEvent): Flow<DataState<NoteListViewState>?> = flow {
 
         val cacheObject = safeCacheCall(IO) {
             noteCacheDataSource.getNumberOfNotes()
         }
+
 
         val response = object : CacheResponseHandler<NoteListViewState, Int>(
             response = cacheObject,

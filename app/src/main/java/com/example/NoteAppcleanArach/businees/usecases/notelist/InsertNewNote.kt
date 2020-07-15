@@ -1,5 +1,6 @@
 package com.example.NoteAppcleanArach.businees.usecases.notelist
 
+import android.util.Log
 import com.example.NoteAppcleanArach.businees.data.cache.abstraction.NoteCacheDataSource
 import com.example.NoteAppcleanArach.businees.data.cache.util.CacheResponseHandler
 import com.example.NoteAppcleanArach.businees.data.network.abstraction.NoteNetworkDataSource
@@ -18,6 +19,8 @@ class InsertNewNote(
     private val noteCacheDataSource: NoteCacheDataSource,
     private val noteNetworkDataSource: NoteNetworkDataSource
 ) {
+
+    private val TAG = "InsertNewNote"
 
     fun insertNote(
         id: String?,
@@ -38,6 +41,7 @@ class InsertNewNote(
         ) {
             override suspend fun handleSuccess(resultObj: Long): DataState<NoteListViewState> =
                 if (resultObj > 0) {
+                    Log.e(TAG,"handleSuccess : ${Constants.INSERT_NOTE_SUCCESS}")
                     val viewState = NoteListViewState(
                         newNote = newNote
                     )
@@ -75,6 +79,7 @@ class InsertNewNote(
         message?.let {
             if (it.equals(Constants.INSERT_NOTE_SUCCESS))
                 safeApiCall(IO) {
+                    Log.e(TAG,"updateNetwork: ")
                     noteNetworkDataSource.insertOrUpdateNote(note = newNote)
                 }
         }

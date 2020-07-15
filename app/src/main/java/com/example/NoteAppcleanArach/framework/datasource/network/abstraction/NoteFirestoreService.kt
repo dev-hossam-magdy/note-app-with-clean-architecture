@@ -6,8 +6,8 @@ interface NoteFirestoreService {
 
     suspend fun insertOrUpdateNote(note: Note)
     suspend fun insertOrUpdateNote(list: List<Note>)
-    suspend fun restoreDeletedNote(note: Note) // insert deleted note
-    suspend fun restoreDeletedNote(list: List<Note>) // insert deleted note
+    suspend fun insertDeletedNote(note: Note) // insert deleted note
+    suspend fun insertDeletedNote(list: List<Note>) // insert deleted note
     suspend fun deleteNote(primaryKey: String)
     suspend fun removeDeletedNote(note: Note) // delete deleted note
     suspend fun getDeletedNotes():List<Note>
